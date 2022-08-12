@@ -71,7 +71,21 @@ function test() {
 } // tests a round of the game against 'rock' input
 
 function game() {
+    score = [0,0];
 
-
+    for (let i = 0; i < 5; i++) {
+        console.log("Rodada " + (i+1));
+        result = test();
+        
+        if (result.slice(0,8) === "You win!") {
+            score[0]++;
+        } else if (result.slice(0,8) === "You lose") {
+            score[1]++;
+        } else {
+            score[0]++;
+            score[1]++; // a tie
+        }
+        console.log("O placar é: jogador: " + score[0] + "\nComputardor: " + score[1]);
+    }
 } // plays a 5 round match
 
