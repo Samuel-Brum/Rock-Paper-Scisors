@@ -1,11 +1,37 @@
 const buttonPlayerChoice = document.querySelectorAll("button");
+const playerScore = document.querySelector(".playerScore");
+const computerScore = document.querySelector(".computerScore");
+const resultMessage = document.querySelector(".message");
+
+
+let score = [0,0];
+
 
 buttonPlayerChoice.forEach((button) => {
     button.addEventListener("click", () => {
         console.log('player choice is ' + button.id);
-        game(button.id);
+        resultMessage.textContent = game(button.id);
+
+        if (result.slice(0,8) === "You win!") {
+            score[0]++;
+        } else if (result.slice(0,8) === "You lose") {
+            score[1]++;
+        }
+        playerScore.textContent = "Player: " + score[0];
+        computerScore.textContent = "Computer: " + score[1];
+
+        if (score[0] === 5) {
+            resultMessage.textContent = "Congratulations! You won the Bo5 match!";
+            score = [0,0]; 
+        }
+        
+        if (score[1] === 5) {
+            resultMessage.textContent = "What a shame... you lost the Bo5 match...";
+            score = [0,0];
+        }
     });
 });
+
 
 
 
