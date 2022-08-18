@@ -3,9 +3,7 @@ const playerScore = document.querySelector(".playerScore");
 const computerScore = document.querySelector(".computerScore");
 const resultMessage = document.querySelector(".message");
 
-
 let score = [0,0];
-
 
 buttonPlayerChoice.forEach((button) => {
     button.addEventListener("click", () => {
@@ -30,10 +28,7 @@ buttonPlayerChoice.forEach((button) => {
             score = [0,0];
         }
     });
-});
-
-
-
+}); // plays a round of the game with the selected options as the button is pressed
 
 function getComputerChoice() {
     let  options = {
