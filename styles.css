@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding-left: 7%;
+    padding-right: 7%;
+    min-width: 750px;
+}
+
+.title {
+    font-size: 54px;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-weight: 400;
+}
+
+.game {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #FF8226;
+
+}
+
+.option {
+    scale: 0.7;
+    border-color: white;
+    background: white;
+}
+
+.option:hover {
+    border-radius: 5px;
+    border-color: #A4FF26;
+    background-color: #A4FF26;
+}
+
+.results {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 26px;
+}

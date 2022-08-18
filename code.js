@@ -1,3 +1,14 @@
+const buttonPlayerChoice = document.querySelectorAll("button");
+
+buttonPlayerChoice.forEach((button) => {
+    button.addEventListener("click", () => {
+        console.log('player choice is ' + button.id);
+        game(button.id);
+    });
+});
+
+
+
 function getComputerChoice() {
     let  options = {
         0: "rock",
@@ -60,22 +71,21 @@ function playRound(playerSelection, computerSelection) {
             };
         };
 } // plays one round of an input by the player 
-  // agaist a random choice by the computer
+  // agaist a random choice by the computer */
 
-function test() {
-    const playerSelection = getPlayerChoice();
+function game(playerSelection) {
     const computerSelection = getComputerChoice();
     result = playRound(playerSelection, computerSelection)
     console.log(result);
     return result;
-} // tests a round of the game against 'rock' input
+} // tests a round of the game against player input
 
-function game() {
+function match() {
     score = [0,0];
 
     for (let i = 0; i < 5; i++) {
         console.log("Rodada " + (i+1));
-        result = test();
+        result = game();
         
         if (result.slice(0,8) === "You win!") {
             score[0]++;
